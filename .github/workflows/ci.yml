@@ -24,7 +24,7 @@ jobs:
         working-directory: ./frontend
       - uses: 'reggionick/s3-deploy@04c48f45adfd7a34c66348cf9cd1b6cd117cc467'
         with:
-          folder: ./build
+          folder: ./frontend/build
           bucket: ${{ secrets.S3_BUCKET }}
           bucket-region: us-east-1
           dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
