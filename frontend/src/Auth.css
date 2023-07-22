@@ -31,10 +31,22 @@ form {
   margin-left: 20%;
   margin-right: 20%;
 }
-.profile {
+.auth {
   background-image: linear-gradient(to bottom right, #72a48f, #6db094, #72a48f);
 }
 .b {
   width: 200px;
   background-color: #ff6b6b;
+}
+
+.link-button {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
 }

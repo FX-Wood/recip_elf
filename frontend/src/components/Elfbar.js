@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const Elfbar = () => {
     const links = [
         {
-          text: "Sign-Up",
-          a: "/Profile"
+          text: "Sign Up / Log In",
+          a: "/auth"
         },
         {
           text: "Recipes",
@@ -19,14 +19,13 @@ const Elfbar = () => {
           a: "/generate"
         }
     ]
-    const linkContent = links.map(({ text, a }) => (<Link to={a} className="sign-up">{text}</Link>))
+    const linkContent = links.map(({ text, a }, i) => (<Link to={a} className="sign-up" key={i}>{text}</Link>))
     return (
         <Navbar className="nav" variant="light" expand="lg">
             <Container>
                 <Navbar.Brand href="/">
-                    <img className="logo" src={logo} />
+                    <img className="logo" src={logo} alt="recipelf logo, a slightly open domed lid on a plate; a cloche" />
                 </Navbar.Brand>
-                {/* <Navbar.Brand href = "profile.js">Sign-Up</Navbar.Brand> */}
                 {linkContent}
             </Container>
         </Navbar>

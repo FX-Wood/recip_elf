@@ -1,9 +1,12 @@
 const express = require('express');
+const winston = require('winston')
 const router = express.Router();
 const axios = require('axios');
+const { isAuthed } = require('../lib/auth/jwt')
 
 const { OpenAIApi } = require("openai");
 
+router.use(isAuthed)
 /**
  * {
  *    cuisine: string
@@ -11,9 +14,8 @@ const { OpenAIApi } = require("openai");
  *    dietaryRestrictions: string[]
  * }
  */
-
 router.post('/', function(req, res, next) {
-  console.log('body', req.body)
+  logger.log('debug', 'body', req.body)
   var requestBody = req.body;
   var users = requestBody.users;
   var cuisine = requestBody.cuisine;
@@ -37,7 +39,7 @@ router.post('/', function(req, res, next) {
   };
   messages.push(userMessage);
 
-  console.log(messages);
+  logger.log('debug', 'messages', messages);
 
   axios.post('https://api.openai.com/v1/chat/completions', {
     model: "gpt-3.5-turbo",
@@ -49,7 +51,7 @@ router.post('/', function(req, res, next) {
     }
   })
   .then(function(response) {
-    console.log('response', response)
+    logger.log('debug', 'response', response)
     var generatedText = response.data.choices[0].message.content;
     res.json({ response: generatedText });
   })
