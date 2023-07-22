@@ -2,7 +2,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Auth from './Auth';
 import HomePage from './HomePage';
-import Practice from './practice';
 import IngredientPage from './IngredientPage';
 import { UserProfileProvider } from './components/auth/UserProfileProvider';
 import { IngredientsProvider } from './components/IngredientsProvider'
@@ -24,7 +23,6 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              <Route path='/practice' element={<Practice />} />
               <Route path='/generate' element={<HomePage />} />
             </Routes>
           </BrowserRouter>
