@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npm run build && node ./bin/www",
-    "build": "pushd ../frontend && npm run build && popd"
+    "build": "npm run build"
   },
   "dependencies": {
     "@prisma/client": "^4.16.2",
