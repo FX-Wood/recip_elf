@@ -1,7 +1,6 @@
 import "./IngredientPage.css";
 import Elfbar from "./components/Elfbar";
 import Container from "react-bootstrap/Container";
-import Stack from "react-bootstrap/Stack";
 import Table from "react-bootstrap/Table";
 import { useContext } from "react";
 import { IngredientsContext } from "./components/IngredientsProvider";
