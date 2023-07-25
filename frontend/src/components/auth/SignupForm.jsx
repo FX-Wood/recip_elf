@@ -28,7 +28,7 @@ const SignupForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await signup({ name, email, password, dietaryRestrictions: dietaryRestrictions.split(',') })
-        const origin = location.state?.from?.pathname || '/';
+        const origin = location.state?.from?.pathname || '/ingredients';
         navigate(origin);
     }
     return (

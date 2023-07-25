@@ -65,6 +65,9 @@ export const UserProfileProvider = ({ children }) => {
     }
     const providerValue = {
         server: state.server,
+        name: state.name,
+        dietaryRestrictions: state.dietaryRestrictions,
+        token: state.token,
         signup,
         login,
         logout

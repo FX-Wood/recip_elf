@@ -5,8 +5,8 @@ import { IngredientsContext } from "./IngredientsProvider";
 
 const IngredientForm = (props) => {
   const { addIngredient } = useContext(IngredientsContext)
-  const [name, setName] = useState(null);
-  const [expiration, setExpiration] = useState(null);
+  const [name, setName] = useState('');
+  const [expiration, setExpiration] = useState('');
   const handleSubmit = (e) => {
       e.preventDefault()
       addIngredient({ name, expiration })

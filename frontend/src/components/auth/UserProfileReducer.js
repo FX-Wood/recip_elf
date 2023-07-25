@@ -4,15 +4,19 @@ const reducer = (state, action) => {
         case 'LOG_IN' || 'SIGN_UP':
             let { token, profile } = action.payload
             console.log('reducer', { token, profile })
-            return {
+            const newState = {
                     token,
                     name: profile.name,
                     server: state.server,
                     dietaryRestrictions: profile.dietaryRestrictions
             }
+            console.log({newState})
+            return newState
         case 'LOGOUT':
+            console.log('logout case')
             return action.payload
         default:
+            console.log('default case')
             return state;
     }
  }
