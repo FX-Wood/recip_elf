@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 const Elfbar = () => {
     const links = [
         {
-          text: "Sign Up / Log In",
-          a: "/auth"
+          text: "Ingredients",
+          a: "/ingredients"
         },
-        {
-          text: "Recipes",
-          a: "/Practice"
-        },
+        // {
+        //   text: "Recipes",
+        //   a: "/Practice"
+        // },
         {
           text: "Generate Recipe",
           a: "/generate"

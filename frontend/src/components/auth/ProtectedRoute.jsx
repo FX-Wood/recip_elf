@@ -11,9 +11,8 @@ import {
 const ProtectedRoute = ({ children }) => {
   const { token } = useContext(UserProfileContext);
   const location = useLocation();
-  console.log('looking for token', token)
   if (!token) {
-    return <Navigate to="/auth" replace state={{ from: location }} />;
+    return <Navigate to="/" replace state={{ from: location }} />;
   }
 
   return children;

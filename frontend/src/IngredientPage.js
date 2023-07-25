@@ -28,8 +28,10 @@ function IngredientPage() {
         <Container>
           <Table striped bordered hover>
             <thead>
-              <th>Ingredient</th>
-              <th>Expiration Date</th>
+              <tr>
+                <th>Ingredient</th>
+                <th>Expiration Date</th>
+              </tr>
             </thead>
             <tbody>{tableRows}</tbody>
           </Table>
