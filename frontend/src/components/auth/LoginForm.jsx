@@ -15,7 +15,7 @@ const LoginForm = () => {
         const data = { email, password }
         console.log('logging in', data)
         login(data)
-        const origin = location.state?.from?.pathname || '/';
+        const origin = location.state?.from?.pathname || '/ingredients';
         navigate(origin);
     }
     return (

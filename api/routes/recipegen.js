@@ -1,8 +1,8 @@
 const express = require('express');
-const winston = require('winston')
 const router = express.Router();
 const axios = require('axios');
-const { isAuthed } = require('../lib/auth/jwt')
+const { isAuthed } = require('../lib/auth/jwt');
+const { logger } = require('../lib/logger')
 
 const { OpenAIApi } = require("openai");
 
@@ -56,7 +56,7 @@ router.post('/', function(req, res, next) {
     res.json({ response: generatedText });
   })
   .catch(function(error) {
-    console.error(error);
+    logger.log('error', 'error reaching the openai api', error);
     res.status(500).json({ error: 'Server Error' });
   });
 });

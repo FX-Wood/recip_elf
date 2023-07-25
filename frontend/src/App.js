@@ -14,16 +14,23 @@ function App() {
         <IngredientsProvider>
           <BrowserRouter>
             <Routes>
-              <Route path='/auth' element={<Auth />} />
+              <Route path='/' element={<Auth />} />
               <Route 
-                path='/' 
+                path='/ingredients' 
                 element={
                   <ProtectedRoute>
                     <IngredientPage />
                   </ProtectedRoute>
                 }
               />
-              <Route path='/generate' element={<HomePage />} />
+              <Route 
+                path='/generate'
+                element={
+                    <ProtectedRoute>
+                        <HomePage />
+                    </ProtectedRoute>
+                }
+            />
             </Routes>
           </BrowserRouter>
         </IngredientsProvider>

@@ -7,15 +7,21 @@ import { UserProfileContext } from "./components/auth/UserProfileProvider";
 
 function HomePage() {
   const { ingredients } = useContext(IngredientsContext)
-  const { server, token } = useContext(UserProfileContext)
+  const { server, token, dietaryRestrictions } = useContext(UserProfileContext)
+  const [cuisine, setCuisine] = useState("american")
   const [chatResponse, setChatResponse] = useState("");
   const [toggle, setToggle] = useState(false);
   const handleGenerate = async (e) => {
+    e.preventDefault()
+    setToggle(true)
+    if (chatResponse) {
+      setChatResponse("")
+    }
     // send ingredients to backend
     const body = {
       foods: ingredients,
-      cuisines: ["Italian"],
-      dietaryRestrictions: ["peanuts"]
+      cuisine,
+      dietaryRestrictions
     }
     const res = await fetch(`${server}/recipegen`, {
       method: "POST",
@@ -26,7 +32,7 @@ function HomePage() {
       }
     });
     const data = await res.json()
-    setChatResponse(data)
+    setChatResponse(data.response)
   };
 
   return (
@@ -45,13 +51,24 @@ function HomePage() {
           </p>
 
           <div className="g">
-            <button onClick={() => {setToggle(!toggle); handleGenerate()}} className=" b mb-5">
+            <form onSubmit={(e) => {handleGenerate(e)}}>
+            <label>Cuisine:
+            <input
+              name="cuisine"
+              type="text"
+              placeholder="name of cuisine"
+              value={cuisine}
+              onChange={e => setCuisine(e.target.value)}
+            />
+            </label>
+            <button className="b mb-5" type="submit">
               Generate
             </button>
+            </form> 
             {toggle && (
               <p className="gText">
                 
-                {chatResponse ? chatResponse.response : 'loading'}
+                {chatResponse || 'loading'}
 
               </p>
             )}
