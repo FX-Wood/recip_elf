@@ -9,11 +9,8 @@ import {
  * shamelessly stolen from https://www.robinwieruch.de/react-router-authentication/
  */
 const ProtectedRoute = ({ children }) => {
-  const ctx = useContext(UserProfileContext);
-  console.log({ ctx })
-  const token = ctx.token
+  const { token } = useContext(UserProfileContext);
   const location = useLocation();
-  console.log('looking for token', token)
   if (!token) {
     return <Navigate to="/" replace state={{ from: location }} />;
   }
