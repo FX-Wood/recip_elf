@@ -15,7 +15,8 @@ app.use(logMiddleWare)
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, '../', 'frontend', 'build')));
+
+app.get('/', (req,res) => res.json({ message: "ok" }))
 
 app.use('/auth', authRouter)
 app.use('/recipegen', recipegenRouter);

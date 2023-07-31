@@ -17,11 +17,6 @@ const logger = winston.createLogger({
     ]
 });
 
-module.exports.logCluster = (cluster) => {
-    cluster.meshes = cluster.meshes.map(mesh => mesh.id)
-    return cluster
-}
-
 /**
  * logging middleware, passes morgan output to winston.
  * See guide: https://betterstack.com/community/guides/logging/how-to-install-setup-and-use-winston-and-morgan-to-log-node-js-applications/
