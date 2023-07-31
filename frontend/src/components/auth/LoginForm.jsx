@@ -10,12 +10,21 @@ const LoginForm = () => {
     const navigate = useNavigate()
     const location = useLocation()
     
+    /**
+        * need this so that we can redirect after login.
+        * if you know a better way to do this let me know
+    */
+    const loginSuccessCallback = () => {
+        console.log('login success custom callback')
+        const origin = location.state?.from?.pathname || '/ingredients';
+        console.log('navigating to origin for niceness', origin)
+        navigate(origin);
+    }
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         const data = { email, password }
-        login(data)
-        const origin = location.state?.from?.pathname || '/ingredients';
-        navigate(origin);
+        login(data, loginSuccessCallback)
     }
     return (
             <form onSubmit={handleSubmit}>

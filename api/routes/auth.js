@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 
 router.post('/signup', async (req, res, next) => {
     const { name, email, password, dietaryRestrictions } = req.body
+    console.log({ dietaryRestrictions })
     let user = await prisma.user.findFirst({
         where: { email }
     })

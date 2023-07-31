@@ -13,8 +13,10 @@ export const UserProfileContext = createContext(initialState);
 
 export const UserProfileProvider = ({ children }) => {
     const [state, dispatch] = useReducer(UserProfileReducer, initialState);
-
-    async function signup({ name, email, password, dietaryRestrictions }) {
+    /**
+        * creates a user and takes a successCallback for navigating on success
+    */ 
+    async function signup({ name, email, password, dietaryRestrictions }, successCallback=(() => console.log('logged in!'))) {
         const res = await fetch(`${state.server}/auth/signup`, {
             method: "POST",
             headers: {
@@ -28,16 +30,23 @@ export const UserProfileProvider = ({ children }) => {
             })
         })
         const { token, profile } = await res.json()
-        dispatch({
-            type: 'SIGN_UP',
-            payload: {
-                token,
-                profile
-            }
-        });
+        if (token) {
+            dispatch({
+                type: 'SIGN_UP',
+                payload: {
+                    token,
+                    profile
+                }
+            });
+            successCallback()
+        } else {
+            // TODO: handle auth failure
+        }
     }
-
-    async function login({ email, password }) {
+    /**
+        * logs in a user and takes a successCallback for navigating on success
+    */ 
+    async function login({ email, password }, successCallback=(() => console.log('logged in!'))) {
         const res = await fetch(`${state.server}/auth/login/credential`, {
             method: "POST",
             headers: {
@@ -49,13 +58,18 @@ export const UserProfileProvider = ({ children }) => {
             })
         })
         const { token, profile } = await res.json()
-        dispatch({
-            type: 'LOG_IN',
-            payload: {
-                token,
-                profile
-            }
-        });
+        if (token) {
+            dispatch({
+                type: 'LOG_IN',
+                payload: {
+                    token,
+                    profile
+                }
+            });
+            successCallback()
+        } else {
+            // TODO: handle auth failure
+        }
     }
     function logout() {
         dispatch({
