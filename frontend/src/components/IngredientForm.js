@@ -3,7 +3,7 @@ import { React, useContext } from "react";
 import { useState } from "react";
 import { IngredientsContext } from "./IngredientsProvider";
 
-const IngredientForm = (props) => {
+const IngredientForm = () => {
   const { addIngredient } = useContext(IngredientsContext);
   const [name, setName] = useState("");
   const [expiration, setExpiration] = useState("");
