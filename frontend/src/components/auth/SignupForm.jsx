@@ -37,9 +37,8 @@ const SignupForm = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const arrayRestrictions = Array.of(
-      dietaryRestrictions.replaceAll(/\w/, "").split(",")
-    );
+    const arrayRestrictions = dietaryRestrictions.replaceAll(/\s/g, "").split(",")
+    console.log(arrayRestrictions)
     signup(
       { email, password, name, dietaryRestrictions: arrayRestrictions },
       signupSuccessCallback
@@ -104,3 +103,4 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
+
