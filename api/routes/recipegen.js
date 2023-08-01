@@ -46,7 +46,7 @@ router.post("/", function (req, res) {
     .post(
       "https://api.openai.com/v1/chat/completions",
       {
-        model: "gpt-3.5-turbo",
+        model: process.env.COMPLETION_MODEL || "gpt-3.5-turbo",
         messages: messages,
       },
       {
