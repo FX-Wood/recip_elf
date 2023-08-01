@@ -1,17 +1,17 @@
-import './IngredientForm.css'
+import "./IngredientForm.css";
 import { React, useContext } from "react";
 import { useState } from "react";
 import { IngredientsContext } from "./IngredientsProvider";
 
-const IngredientForm = (props) => {
-  const { addIngredient } = useContext(IngredientsContext)
-  const [name, setName] = useState('');
-  const [expiration, setExpiration] = useState('');
+const IngredientForm = () => {
+  const { addIngredient } = useContext(IngredientsContext);
+  const [name, setName] = useState("");
+  const [expiration, setExpiration] = useState("");
   const handleSubmit = (e) => {
-      e.preventDefault()
-      addIngredient({ name, expiration })
-  }
-    
+    e.preventDefault();
+    addIngredient({ name, expiration });
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -44,6 +44,6 @@ const IngredientForm = (props) => {
       </form>
     </div>
   );
-}
+};
 
-export default IngredientForm
+export default IngredientForm;

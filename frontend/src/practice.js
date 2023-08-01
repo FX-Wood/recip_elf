@@ -17,7 +17,7 @@ function Practice() {
           <a
             className="a"
             href="https://www.allrecipes.com/recipe/22180/waffles-i/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -29,7 +29,7 @@ function Practice() {
           <a
             className="a"
             href="https://feelgoodfoodie.net/recipe/overnight-oats/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -40,7 +40,7 @@ function Practice() {
           <a
             className="a"
             href="https://sodelicious.recipes/recipe/omelet-french-toast/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             {" "}
             <img
@@ -52,7 +52,7 @@ function Practice() {
           <a
             className="a"
             href="https://www.eatingwell.com/recipe/8029771/avocado-toast-recipe/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             {" "}
             <img
@@ -64,7 +64,7 @@ function Practice() {
           <a
             className="a"
             href="https://thishealthytable.com/blog/breakfast-fruit-salad/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             {" "}
             <img
@@ -82,7 +82,7 @@ function Practice() {
           <a
             className="a"
             href="https://www.bbcgoodfood.com/recipes/quick-chicken-hummus-bowl"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -93,7 +93,7 @@ function Practice() {
           <a
             className="a"
             href="https://feelgoodfoodie.net/recipe/shrimp-rice-bowl/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -104,7 +104,7 @@ function Practice() {
           <a
             className="a"
             href="https://healthynibblesandbits.com/soba-noodles-with-almond-butter-sauce-vegan/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -115,7 +115,7 @@ function Practice() {
           <a
             className="a"
             href="https://www.superhealthykids.com/best-veggie-pizza/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -126,7 +126,7 @@ function Practice() {
           <a
             className="a"
             href="https://www.landolakes.com/recipe/19999/salmon-fillets-with-orange-basil-butter/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -144,7 +144,7 @@ function Practice() {
           <a
             className="a"
             href="https://bromabakery.com/healthy-gluten-free-chocolate-chip-cookies/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -155,7 +155,7 @@ function Practice() {
           <a
             className="a"
             href="https://sunkissedkitchen.com/gluten-free-apple-pie/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -166,7 +166,7 @@ function Practice() {
           <a
             className="a"
             href="https://www.savvysavingcouple.net/fruit-salad-trifle/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -177,7 +177,7 @@ function Practice() {
           <a
             className="a"
             href="https://www.godairyfree.org/recipes/dairy-free-desserts/black-raspberry-ice-cream-vegan-gluten-free-nut-free"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"
@@ -188,7 +188,7 @@ function Practice() {
           <a
             className="a"
             href="https://fitfoodiefinds.com/100-healthy-smoothie-recipes/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <img
               className="image"

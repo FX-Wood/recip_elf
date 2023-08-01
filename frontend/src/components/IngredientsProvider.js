@@ -1,10 +1,10 @@
 // shamelessly stolen from https://endertech.com/blog/using-reacts-context-api-for-global-state-management
-import React, { createContext, useReducer } from 'react';
-import IngredientsReducer from './IngredientsReducer';
+import React, { createContext, useReducer } from "react";
+import IngredientsReducer from "./IngredientsReducer";
 
 const initialState = {
-  ingredients: []
-}
+  ingredients: [],
+};
 
 export const IngredientsContext = createContext(initialState);
 
@@ -15,25 +15,25 @@ export const IngredientsProvider = ({ children }) => {
 
   function addIngredient(item) {
     dispatch({
-      type: 'ADD_INGREDIENT',
-      payload: item
+      type: "ADD_INGREDIENT",
+      payload: item,
     });
   }
   function removeIngredient(item) {
     dispatch({
-      type: 'REMOVE_INGREDIENT',
-      payload: item
+      type: "REMOVE_INGREDIENT",
+      payload: item,
     });
   }
   const providerValue = {
     ingredients: state.ingredients,
     addIngredient,
-    removeIngredient
-  }
+    removeIngredient,
+  };
 
   return (
     <IngredientsContext.Provider value={providerValue}>
       {children}
     </IngredientsContext.Provider>
-  )
-}
+  );
+};

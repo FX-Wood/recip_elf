@@ -5,7 +5,7 @@ import SignupForm from "./components/auth/SignupForm";
 import "./Auth.css";
 
 function Auth() {
-  const [newUser, setNewUser] = useState(true)
+  const [newUser, setNewUser] = useState(true);
 
   //name instead of prompt
   return (
@@ -19,12 +19,12 @@ function Auth() {
       <div className="text">
         {newUser ? <LoginForm /> : <SignupForm />}
         <p>
-          <span>{newUser ? "No account?" : "Already have an account?"}    </span>
-          <button className="link-button" onClick={() => setNewUser(!newUser)}>{newUser ? "Create one" : "Log In"}</button>
+          <span>{newUser ? "No account?" : "Already have an account?"} </span>
+          <button className="link-button" onClick={() => setNewUser(!newUser)}>
+            {newUser ? "Create one" : "Log In"}
+          </button>
         </p>
-        
       </div>
-
     </div>
   );
 }
