@@ -1,9 +1,6 @@
-import { useContext } from 'react';
-import { UserProfileContext } from './UserProfileProvider';
-import {
-  Navigate,
-  useLocation,
-} from 'react-router-dom';
+import { React, useContext } from "react";
+import { UserProfileContext } from "./UserProfileProvider";
+import { Navigate, useLocation } from "react-router-dom";
 
 /**
  * shamelessly stolen from https://www.robinwieruch.de/react-router-authentication/
@@ -18,4 +15,4 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-export default ProtectedRoute
+export default ProtectedRoute;

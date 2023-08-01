@@ -1,5 +1,5 @@
-mport { Configuration, OpenAIApi } from "openai";
-import readline from "readline";
+const { Configuration, OpenAIApi } = require("openai");
+const readline = require("readline");
 
 const configuration = new Configuration({
   apiKey: "put your api key here!",
@@ -13,13 +13,19 @@ const userInterface = readline.createInterface({
 
 userInterface.prompt();
 
-userInterface.on("line", async (input) => {
+userInterface.on("line", async () => {
   await openai
     .createChatCompletion({
       model: "gpt-4-0314",
-      messages: [{ role: "system", content: "Hello, You are a cook assistant named Jarvis."
-      && "and you are helping a chef to cook a dish by giving recipe steps"
-      && "and nutritional information. Your responses should be simplified and concise." }],
+      messages: [
+        {
+          role: "system",
+          content:
+            "Hello, You are a cook assistant named Jarvis." &&
+            "and you are helping a chef to cook a dish by giving recipe steps" &&
+            "and nutritional information. Your responses should be simplified and concise.",
+        },
+      ],
     })
     .then((res) => {
       console.log(res.data.choices[0].message.content);
