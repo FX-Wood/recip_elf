@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 const { isAuthed } = require("../lib/auth/jwt");
-const { logger } = require("../lib/logger");
 
 router.use(isAuthed);
 /**
@@ -13,7 +12,7 @@ router.use(isAuthed);
  * }
  */
 router.post("/", function (req, res) {
-  logger.log("debug", "body", req.body);
+  console.log("debug", "body", req.body);
   var requestBody = req.body;
   var cuisine = requestBody.cuisine;
   var dietaryRestrictions = requestBody.dietaryRestrictions;
@@ -30,7 +29,7 @@ router.post("/", function (req, res) {
       .map((food) => food.name)
       .join(", ")}.\n`,
     `Don't include any of the following ingredients: ${dietaryRestrictions.join(
-      ", "
+      ", ",
     )}`,
   ].join("");
 
@@ -40,13 +39,13 @@ router.post("/", function (req, res) {
   };
   messages.push(userMessage);
 
-  logger.log("debug", "messages", messages);
+  console.log("debug", "messages", messages);
 
   axios
     .post(
       "https://api.openai.com/v1/chat/completions",
       {
-        model: process.env.COMPLETION_MODEL || "gpt-3.5-turbo",
+        model: process.env.COMPLETION_MODEL || "gpt-4o-mini",
         messages: messages,
       },
       {
@@ -54,7 +53,7 @@ router.post("/", function (req, res) {
           "Content-Type": "application/json",
           Authorization: `Bearer ${process.env.API_KEY}`,
         },
-      }
+      },
     )
     .then(function (response) {
       logger.log("debug", "response", response);
