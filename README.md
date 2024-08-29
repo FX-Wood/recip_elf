@@ -25,7 +25,6 @@ Built with love for the 2023 Future Builders AI Hackathon
 3. `cp sample-env .env`
 4. add your postgres database connection string to .env file
 5. add your openai api key to the .env file
-6. from the `api/` directory, do `npm install && npm install dotenv`
-7. from the `frontend/` directory, do `npm install`
-8. from the `api/` directory, do `npm run start`
-9. visit http://localhost:3000
+6. add a high-entropy jwt secret to the .env file
+7. from the `api/` directory, do `npm install`
+8. from the `api/` directory, do `npx prisma reset`
