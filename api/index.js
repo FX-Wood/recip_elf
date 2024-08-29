@@ -2,7 +2,6 @@ var express = require("express");
 var cors = require("cors");
 var dotenv = require("dotenv");
 dotenv.config();
-const { logMiddleWare } = require("./lib/logger");
 
 var authRouter = require("./routes/auth");
 var recipegenRouter = require("./routes/recipegen");
@@ -10,7 +9,6 @@ var ingredientRouter = require("./routes/ingredient");
 
 var app = express();
 
-app.use(logMiddleWare);
 app.use(cors("*"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
