@@ -5,7 +5,7 @@ import UserProfileReducer from "./UserProfileReducer";
 const initialState = {
   server:
     process.env.NODE_ENV === "production"
-      ? "https://api.recipelf.com"
+      ? "https://recipelf.com/api"
       : "http://localhost:3000",
   name: "",
   dietaryRestrictions: [],
@@ -21,7 +21,7 @@ export const UserProfileProvider = ({ children }) => {
    */
   async function signup(
     { name, email, password, dietaryRestrictions },
-    successCallback = () => console.log("logged in!")
+    successCallback = () => console.log("logged in!"),
   ) {
     const res = await fetch(`${state.server}/auth/signup`, {
       method: "POST",
@@ -54,7 +54,7 @@ export const UserProfileProvider = ({ children }) => {
    */
   async function login(
     { email, password },
-    successCallback = () => console.log("logged in!")
+    successCallback = () => console.log("logged in!"),
   ) {
     const res = await fetch(`${state.server}/auth/login/credential`, {
       method: "POST",
