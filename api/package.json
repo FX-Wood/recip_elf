@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run build && node ./bin/www",
-    "build": "npm run build"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "@prisma/client": "^4.16.2",
