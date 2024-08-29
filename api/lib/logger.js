@@ -10,12 +10,6 @@ const logger = winston.createLogger({
       timestamp: true,
       colorize: true,
     }),
-    new winston.transports.File({
-      filename:
-        process.env.NODE_ENV === "production"
-          ? "/recip_elf/logs/recipelf.log"
-          : "./recipelf.log",
-    }),
   ],
 });
 
@@ -40,7 +34,7 @@ module.exports.logMiddleWare = morgan(
         logger.info("incoming-request", data);
       },
     },
-  }
+  },
 );
 
 module.exports.logger = logger;

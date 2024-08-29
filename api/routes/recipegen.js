@@ -12,7 +12,7 @@ router.use(isAuthed);
  * }
  */
 router.post("/", function (req, res) {
-  console.log("debug", "body", req.body);
+  logger.log("debug", "body", req.body);
   var requestBody = req.body;
   var cuisine = requestBody.cuisine;
   var dietaryRestrictions = requestBody.dietaryRestrictions;
@@ -39,7 +39,7 @@ router.post("/", function (req, res) {
   };
   messages.push(userMessage);
 
-  console.log("debug", "messages", messages);
+  logger.log("debug", "messages", messages);
 
   axios
     .post(
