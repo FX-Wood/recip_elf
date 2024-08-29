@@ -4,3 +4,4 @@ node_modules
 
 # MacOS
 .DS_STORE
+.vercel

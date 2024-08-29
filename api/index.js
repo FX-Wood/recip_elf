@@ -11,7 +11,7 @@ var ingredientRouter = require("./routes/ingredient");
 var app = express();
 
 app.use(logMiddleWare);
-app.use(cors());
+app.use(cors("*"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -38,5 +38,8 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.json({ error: "there was an error" });
 });
+
+app.listen(app.get("port") || 5000),
+  () => console.log("express app is listening on port", app.get("port"));
 
 module.exports = app;
