@@ -5,7 +5,7 @@ import UserProfileReducer from "./UserProfileReducer";
 const initialState = {
   server:
     process.env.NODE_ENV === "production"
-      ? "https://recipelf.com/api"
+      ? "https://www.recipelf.com/api"
       : "http://localhost:3000",
   name: "",
   dietaryRestrictions: [],
